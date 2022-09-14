@@ -62,7 +62,7 @@
                             {% csrf_token %}
                             <div class="col-span-2">
                                 <label for="">Profile Picture</label>
-                                <input type="file" name="picture"  value="{{ user_profile.picture }}" class="shadow-none bg-gray-100">
+                                <input type="file" name="picture"  value="{{ user_profile.picture.url }}" class="shadow-none bg-gray-100">
                             </div>
                             <div class="col-span-2">
                                 <label for="about">Bio</label>
@@ -91,7 +91,7 @@
 
                             <div class="bg-gray-10 p-6 pt-0 flex justify-end space-x-3">
                            <button class="p-2 px-4 rounded bg-gray-50 text-red-500"> <a href="/home">Cancel </a> </button>
-                           <button type="button" class="button bg-blue-700"> Save </button>
+                           <button type="submit" class="button bg-blue-700"> Save </button>
                        </div>
                     </form>
     
