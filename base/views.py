@@ -8,6 +8,7 @@ from .models import Profile
 # Create your views here.
 @login_required(login_url='signin')
 def index(request):
+    user_profile = Profile.objects.get(user=request.user)
     return render(request, 'index.html')
 
 def signup(request):
@@ -81,3 +82,7 @@ def settings(request):
         return redirect('settings')
 
     return render(request,'setting.html',{'user_profile':user_profile})
+
+@login_required(login_url='signin')
+def upload(request):
+    return HttpResponse('hello')
